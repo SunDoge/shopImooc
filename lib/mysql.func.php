@@ -46,17 +46,18 @@ function delete($table, $where=null)
 function fetchOne($sql, $result_type = PDO::FETCH_ASSOC)
 {
 	$stmt = connect();
-	return $result = $stmt->query($sql,$result_type)->fetch();
+	return $result = $stmt->query($sql)->fetch($result_type);
 }
 
-function fetchAll($sql, $result_type = PDO::FETCH_ASSOC)
+function fetch_All($sql, $result_type = PDO::FETCH_ASSOC)
 {
 	$stmt = connect();
-	return $result = $stmt->query($sql, $result_type)->fetchAll();
+	return $result = $stmt->query($sql)->fetchAll($result_type);
 }
 
 function getResultNum($sql)
 {
 	$stmt = connect();
-	return $stmt->rowCount();
+	//return count($stmt->query($sql,PDO::FETCH_ASSOC));
+	return count($stmt->query($sql)->fetchAll());
 }
