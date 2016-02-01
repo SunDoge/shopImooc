@@ -1,7 +1,7 @@
 <?php
 require_once '../include.php';
 $act = $_REQUEST['act'];
-$id = $_REQUEST['id'];
+//$id = $_REQUEST['id'];
 /*
 if($act == "logout"){
 	logout();
@@ -19,8 +19,12 @@ switch ($act) {
 		break;
 
 	case 'editAdmin':
-		$mes = editAdmin();
-		break;	
+		$mes = editAdmin($_REQUEST['id']);
+		break;
+
+	case 'delAdmin':
+		$mes = delAdmin($_REQUEST['id']);				
+		break;				
 }
 ?>
 
