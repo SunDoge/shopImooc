@@ -22,11 +22,12 @@ function insert($table, $array)
 
 function update($table, $array, $where = null)
 {
+	$str = "";
 	foreach ($array as $key => $val) {
-		if($str==null){
-			$sep = "";
-		}else{
+		if($str){
 			$sep = ",";
+		}else{
+			$sep = "";
 		}
 		$str .= $sep.$key."='".$val."'";
 	}
