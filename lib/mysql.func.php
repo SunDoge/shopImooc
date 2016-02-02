@@ -15,7 +15,7 @@ function insert($table, $array)
 {
 	$key = join(",",array_keys($array));
 	$vals = "'".join("','",array_values($array))."'";
-	$sql = "insert {$table}($key) values({$vals})";
+	$sql = "insert into {$table} ($key) values({$vals})";
 	$stmt = connect();
 	return $stmt->exec($sql);
 }

@@ -18,6 +18,9 @@ switch ($act) {
 	case 'delAdmin':
 		$mes = delAdmin($_REQUEST['id']);
 		break;	
+
+	case 'addCate':
+		$mes = addCate();	
 }
 ?>
 
