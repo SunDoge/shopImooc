@@ -20,7 +20,16 @@ switch ($act) {
 		break;	
 
 	case 'addCate':
-		$mes = addCate();	
+		$mes = addCate();
+		break;
+
+	case 'delCate':
+		$mes = delCate($_REQUEST['id']);
+		break;	
+
+	case 'editCate':
+		$mes = editCate($_REQUEST['id']);
+		break;	
 }
 ?>
 
